@@ -47,7 +47,7 @@
             background-position: center center;
             background-repeat: no-repeat;
             opacity: 0.15; /* شفافية خفيفة للخلفية */
-            z-index: -1;
+            z-index: 5;
             filter: grayscale(50%); /* لجعلها أقل إزعاجًا للنص */
         }
 
@@ -58,7 +58,7 @@
             border-bottom: 3px solid var(--primary-color);
             box-shadow: 0 5px 20px rgba(0,0,0,0.6);
             position: relative; /* لتحديد سياق z-index للعناصر الداخلية */
-            z-index: 1; /* للتأكد من أنها فوق الخلفية */
+            z-index: 10; /* للتأكد من أنها فوق الخلفية */
             overflow: hidden;
         }
 
@@ -69,7 +69,7 @@
             font-size: clamp(35px, 9vw, 55px); /* أكبر للعنوان الرئيسي */
             margin: 0;
             opacity: 0;
-            z-index: 3;
+            z-index: 10;
             animation: h 1.8s ease-out forwards,hh 10s 0.5s infinite ease-in-out;
             
             text-shadow: 0 0 15px #FFD700; /* ظل ذهبي */
@@ -168,7 +168,7 @@
             justify-content: center;
             gap: 25px; /* مسافة أكبر بين الكروت */
             position: relative;
-            z-index: -1;
+            z-index: 5;
             animation: main 2s 5s forwards;
         }
         @keyframes main {
@@ -249,7 +249,7 @@
             background-color: rgba(30, 41, 59, 0.8);
             border-top: 1px solid var(--primary-color);
             position: relative;
-            z-index: 1;
+            z-index: 15;
             box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
         }
 
@@ -330,7 +330,7 @@
 /* إضافة خيط فوق كل صورة فانوس */
 .lantern-img::after {
     content: "";
-    z-index: 2;
+    z-index: 10;
     position: absolute;
     top: -50px;
     left: 50%;
@@ -481,8 +481,8 @@
         </div>
     </div>
 
-    <iframe width="350" height="215" src="https://www.youtube.com/embed/coFL51WxoT8?si=kjvl85244z5ybTYX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        
+    
+        <iframe style="position: relative;" width="360" height="215" src="https://www.youtube-nocookie.com/embed/coFL51WxoT8?si=kjvl85244z5ybTYX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         
     
         <div class="card time">
