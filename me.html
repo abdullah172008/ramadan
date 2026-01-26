@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحتي التعريفية</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* خلفية متدرجة رائعة */
+    background: linear-gradient(135deg, #000000 0%, #363636 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* الكارت الأساسي مع أنيميشن ظهور */
+.profile-card {
+    background: rgb(128, 115, 0); /* تأثير الزجاج */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(94, 255, 0, 0.2);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    width: 350px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    
+    /* أنيميشن الظهور واللف */
+    animation: appearAndRotate 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes appearAndRotate {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.profile-image img:hover {
+    transform: rotate(360deg); /* لف الصورة عند الوقوف عليها */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+/* تنسيق الروابط */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* تأثير التعبئة عند الـ Hover */
+.btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.btn:hover::after {
+    height: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-5px); /* حركة للأعلى عند الوقوف */
+}
+
+/* ألوان الأزرار */
+.fb { background: #1877F2; }
+.wa { background: #25D366; }
+.phone { background: #e67e22; }
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="logo.png" alt="Mr.Code">
+            </div>
+            
+            <h1>Mr.Code</h1>
+            <p class="bio">مطور واجهات مستخدم | مصمم مبدع</p>
+
+            <div class="links">
+                <a href="https://www.facebook.com/bdallhsbhyzayd" class="btn fb">
+                    <i class="fab fa-facebook-f"></i> فيسبوك
+                </a>
+                
+                <a href="https://wa.me/201500266798" class="btn wa">
+                    <i class="fab fa-whatsapp"></i> واتساب
+                </a>
+                
+                <a href="tel:+201066801994" class="btn phone">
+                    <i class="fas fa-phone-alt"></i> اتصل بي
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

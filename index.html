@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدورة الرمضانية الدينية - قشطوخ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #fccb06; /* ذهبي رمضان */
+            --secondary-color: #0d284a; /* أزرق داكن للخلفية */
+            --accent-color: #00ff88; /* أخضر للفوانيس/الزينة */
+            --text-color-light: #ffffff;
+            --text-color-dark: #333333;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif; /* خط جميل وجاهز */
+            direction: rtl;
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: var(--text-color-light);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative; /* لتمكين وضع الخلفية الثابتة */
+            min-height: 100vh; /* لضمان أن الخلفية تغطي الصفحة بالكامل */
+        }
+
+        /* خلفية رمضانية - يمكنك تغيير الرابط بصورة أخرى */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/your-ramadan-background.png'); /* **استبدل هذا الرابط بصورة رمضانية من اختيارك** */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.15; /* شفافية خفيفة للخلفية */
+            z-index: -1;
+            filter: grayscale(50%); /* لجعلها أقل إزعاجًا للنص */
+        }
+
+        header {
+            background-color: rgba(30, 41, 59, 0.9); /* لون أغمق مع شفافية بسيطة */
+            width: 100%;
+            padding: 130px 0 40px; /* تباعد سفلي أقل */
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            position: relative; /* لتحديد سياق z-index للعناصر الداخلية */
+            z-index: 1; /* للتأكد من أنها فوق الخلفية */
+            overflow: hidden;
+        }
+
+        .h {
+            margin-top: -10px;
+            font-family: 'Amiri', serif; /* خط أكثر تقليدية للعنوان الرئيسي */
+            color: #FFD700;
+            font-size: clamp(35px, 9vw, 55px); /* أكبر للعنوان الرئيسي */
+            margin: 0;
+            opacity: 0;
+            z-index: 3;
+            animation: h 1.8s ease-out forwards,hh 10s 0.5s infinite ease-in-out;
+            
+            text-shadow: 0 0 15px #FFD700; /* ظل ذهبي */
+            
+
+
+
+        }
+        @keyframes hh {
+           0%{
+           color: #FFD700;text-shadow: 0 0 15px #FFD700;
+           }
+        25%{
+            color: #2E8B57;text-shadow: 0 0 15px #2dff88;
+        }
+        50%{
+
+            color: #CD7F32;text-shadow: 0 0 15px #CD7F32    ;
+        }
+       
+
+
+        75%{
+            color: #40E0D0;text-shadow: 0 0 15px #87eee4;
+        }
+        100%{
+           color: #FFD700;text-shadow: 0 0 15px #FFD700;
+           }
+        }
+
+        @keyframes h {
+            0% { transform: scale(0.6) translateY(50px); opacity: 0; }
+            70% { transform: scale(1.1) translateY(35px); opacity: 1; }
+            100% { transform: scale(1) translateY(50px); opacity: 1; }
+        }
+
+        .h2, .h3 {
+            z-index: 3;
+            font-size: clamp(18px, 5vw, 28px);
+            margin: 15px 0;
+            opacity: 0;
+            font-weight: 600;
+        }
+
+        .h2 {
+            margin-top: 70px;
+            color: var(--text-color-light);
+            animation: slideInRight 2s 1s forwards;
+        }
+
+        .h3 {
+            color: var(--text-color-light);
+            animation: slideInLeft 2s 3s forwards;
+        }
+        .h, .h2, .h3 {
+    position: relative;
+    
+    z-index: 10;        /* رقم أكبر من الفانوس ليكون أمامه */
+}
+
+
+
+
+        @keyframes slideInRight {
+            0% {
+            opacity: 0;
+            transform: translateX(40vw); /* يبدأ من خارج الشاشة يميناً */
+            
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(10vw); /* يختفي خارج الشاشة يساراً */
+        }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+            opacity: 0;
+            transform: translateX(-40vw); /* يبدأ من خارج الشاشة يساراً */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(-10vw); /* يختفي خارج الشاشة يميناً */
+        }
+        }
+
+        .قشطوخ { color: var(--accent-color); font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);font-size: 20px; }
+        .dr { color: var(--primary-color); font-weight: bold; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);font-size: 20px; }
+
+        /* قسم المحتوى الجديد */
+        main {
+            opacity: 0;
+            padding: 30px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* مسافة أكبر بين الكروت */
+            position: relative;
+            z-index: -1;
+            animation: main 2s 5s forwards;
+        }
+        @keyframes main {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.95); /* شفافية أعلى للكروت */
+            border-radius: 18px; /* حواف أكثر دائرية */
+            padding: 25px;
+            width: clamp(250px, 80%, 320px); /* حجم مرن للكروت */
+            border: 2px solid var(--primary-color);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px); /* تأثير ضبابي خفيف للخلفية خلف الكرت */
+            display: flex; /* لترتيب المحتوى داخل الكرت */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6), 0 0 20px var(--primary-color);
+        }
+
+        .card h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: clamp(20px, 6vw, 26px);
+            border-bottom: 2px dashed var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .card p {
+            font-size: clamp(16px, 4vw, 20px);
+            line-height: 1.6;
+            color: var(--text-color-light);
+        }
+        
+        
+        .time {
+    animation: timef linear both ;
+    /* جرب القيم دي عشان تظبط وقت الظهور والاختفاء بدقة */
+    animation-timeline: view();
+    animation-range: entry 5% cover 50%; 
+
+}
+        @keyframes timef {
+    from {
+        /* اجمع الـ translateX والـ scale في سطر واحد */
+        transform: translateX(120%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+       
+
+
+        
+        footer {
+            margin-top: 60px;
+            padding: 25px;
+            font-size: clamp(12px, 3vw, 16px);
+            color: #94a3b8;
+            background-color: rgba(30, 41, 59, 0.8);
+            border-top: 1px solid var(--primary-color);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0 20px;
+            }
+        }
+
+        .s {
+            width: 200px;
+            height: auto;
+            margin: 20px 0;
+           
+            transition: transform 0.3s ease-in-out;
+            animation: transformIn 1.5s ease-out forwards;
+        }
+        .s:hover {
+            transform: scale(1.05);
+        }
+        @keyframes transformIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotate(-10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+        .m{
+            width: 350px;
+            height: auto;
+           
+            
+            animation: sop 2s ease-out forwards;
+        }
+        @keyframes sop {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+
+        /* تنسيق صور الفوانيس الجديدة */
+.lanterns-rope {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* طول الحبل */
+    z-index: 2; /* جعل الفوانيس فوق النصوص داخل الهيدر */
+    pointer-events: none;
+}
+
+.lantern-img {
+    z-index: 2;
+    position: absolute;
+    width: 25px; /* تحكم في حجم الفانوس من هنا */
+    height: auto;
+    transform-origin: top center; /* لكي يتأرجح من الأعلى */
+    animation: swing-lantern 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(252, 203, 6, 0.5)); /* إضافة توهج خلف الصورة */
+}
+
+/* حركة التأرجح بالـ CSS */
+@keyframes swing-lantern {
+    0% { transform: rotate(-12deg);z-index: 2;  }
+    50% { transform: rotate(12deg);z-index: 2; }
+    100% { transform: rotate(-12deg);z-index: 2; }
+}
+
+/* إضافة خيط فوق كل صورة فانوس */
+.lantern-img::after {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background: #ccc;
+}
+.div1{
+    position: relative;
+}
+.a2 {
+    color: #2dff88;
+    font-size: 15px;
+    position: absolute;
+    top: -3%;
+    left: 60%;
+
+}
+.a1 {
+    color: #ffd700;
+    font-size: 25px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+}
+.a31 {
+    color: #ffffff;
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+    
+}
+.a32 {
+    color: #ffffff;
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+}
+
+
+        @keyframes bag { to { opacity: 1; } }
+        .me {
+            position: fixed;
+            bottom: 135px; 
+            
+            left: 5px;
+            width: 70px; height: 70px; z-index: 1000;
+            opacity: 0;
+            animation: mea 1s 12s forwards, me 2s ease-in-out infinite 12s;
+        }
+        @keyframes mea { to { opacity: 1; } }
+        @keyframes me { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .imgme { width: 100%; border-radius: 50%; border: 2px solid #4ade80; }
+
+
+
+        .ramadan-footer {
+    background-color: #0f172a; /* كحلي ليلي */
+    color: #fdf6e3;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 3px solid #d4af37;
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* المسافة بين الأيقونات */
+    margin-top: 20px;
+}
+
+.icon-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* لجعل الزر دائري تماماً */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+}
+
+/* ألوان الأيقونات */
+.facebook { background-color: #1877f2; }
+.whatsapp { background-color: #25d366; }
+.phone { background-color: #d4af37; } /* لون ذهبي للاتصال */
+
+/* تأثير عند مرور الماوس */
+.icon-btn:hover {
+    transform: translateY(-10px) rotate(360deg); /* يرتفع للأعلى مع لفة كاملة */
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+    border-color: #fff;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 13px;
+    opacity: 0.6;
+}
+.f{
+    color: red;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+    <div class="lanterns-rope">
+    <img src="fanos.png" class="lantern-img" style="animation-delay: 0.1s; left: 10%;">
+    <img src="fanos.png" class="lantern-img" style="animation-delay: 0.5s; left: 30%;">
+    <img src="fanos.png" class="lantern-img" style="animation-delay: 0.2s; left: 50%;">
+    <img src="fanos.png" class="lantern-img" style="animation-delay: 0.8s; left: 70%;">
+    <img src="fanos.png" class="lantern-img" style="animation-delay: 0.4s; left: 90%;">
+</div>
+
+
+
+
+
+        <h1 class="h">المسابقه الرمضانية الدينية </h1>
+        <h3 class="h2">رمضان في <span class="قشطوخ">قشطوخ</span> حاجة تانية</h3>
+        <h3 class="h3">والسر في <span class="dr">الدورة الرمضانية</span></h3>
+    </header>
+
+    <main>
+        <div>
+<img class="s" src="msch.png" alt="logo">
+<img src="sophi.png" alt="sophi zaied" class="m">
+
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        
+
+        <div style="width: 100%; display: flex; justify-content: flex-start; margin-bottom: 30px;">
+            <div style="text-align: left; padding-left: 20px; border-left: 3px solid var(--primary-color); margin-left: 10px;">
+                <p style="margin: 0; font-size: 1.2rem; color: var(--accent-color);">مقدمة من فضيلة الشيخ:</p>
+                <p style="margin: 5px 0; font-size: 1.8rem; font-weight: bold; color: var(--primary-color);">صبحي زكريا زايد</p>
+                <p style="margin: 0; font-size: 1rem; color: #cbd5e1; line-height: 1.4;">
+                    مدير الدعوة والإعلام<br>
+                    بمنطقة وعظ المنوفية
+                </p>
+            </div>
+        </div>
+    </div>
+
+            
+        
+        
+    
+        <div class="card time">
+            <h4>📅 موعد المسابقة</h4>
+            <p>المسابقه يوميا طوال ايام شهر رمضان المبارك</p>
+        </div>
+        <div class="card time">
+            <h4>🏆 جوائز قيمة</h4>
+            <p>جوائز تقدم ب 500 جنيه يوميا للفائز ومصاحف وغيرها من الهدايا الدينيه الرائعه</p>
+        </div>
+        <div class="card time">
+            <h4>📍 مكان المسابقة</h4>
+            <p>مسجد الجمعيه الشرعيه <div>+
+            </div><div>online</div></p>
+        </div>
+        <div class="card time">
+            <h4>📜 شروط الاشتراك</h4>
+            <p>يحق لاي شخص صغيرا او كبيرا من داخل قريه قشطوخ او خارجها الدخول الى المسابقه</p>
+        </div>
+    </main>
+
+    
+       
+   <footer class="ramadan-footer">
+    <div class="footer-content">
+        <h3>تواصل مع فضيلة الشيخ</h3>
+        <p>نسعد باستقبال استفساراتكم</p>
+        
+        <div class="social-icons-container">
+            <a href="https://www.facebook.com/sbhy.zayd.559750" class="icon-btn facebook" title="فيسبوك">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://wa.me/201090513282" class="icon-btn whatsapp" title="واتساب">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="tel:+201090513282" class="icon-btn phone" title="اتصال">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>رمضان مبارك &copy; 2026</p>
+    </div>
+</footer>
+
+<a href="me.html" class="me">
+    <img src="logo.png" alt="الدعم" class="imgme">
+    <p class="f">كلم الدعم</p>
+</a>
+        
+   
+
+</body>
+</html>
